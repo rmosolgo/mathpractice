@@ -1,0 +1,55 @@
+
+# Required, PDF is written here:
+pdf_filename: worksheets.pdf
+# Key for each studen name:
+Alice:
+  # `defaults:` is ignored but can contain anchored nodes:
+  defaults:
+    divide_default: &divide_default
+      divide: 5
+      # min..max -- interpolated as a Ruby range
+      quotient: 2..10
+      divisor: 2..8
+  # All other keys are named sheets (sheet names appear in answer key and on sheet)
+  monday:
+    # How to extend anchored nodes:
+    - <<: *divide_default
+      divide: 10
+    - add: 5
+      left: 100..500
+      right: 50..200
+    - subtract: 5
+      left: 100..500
+      right: 100..500
+Bob:
+  monday:
+    - divide: 5
+      quotient: 2..10
+      divisor: 2..8
+    - divide: 1
+      quotient: 10
+      divisor: 1..12
+    - add: 5
+      left: 100..500
+      right: 50..200
+    - subtract: 5
+      left: 100..500
+      right: 100..500
+  tuesday:
+    - divide: 5
+      quotient: 2..10
+      divisor: 2..8
+    - add: 5
+      left: 100..500
+      right: 50..200
+    - subtract: 5
+      left: 100..500
+      right: 100..500
+Charlotte:
+  monday:
+    - add: 5
+      left: 5..20
+      right: 3..12
+    - subtract: 5
+      left: 5..15
+      right: 2..10
